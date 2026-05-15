@@ -379,7 +379,7 @@ footer { background-color: var(--forest-green); color: white; text-align: center
 
 .tag {
     font-family: "Courier New", monospace;
-    font-size: 0.55rem;
+    font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--forest-green);
@@ -543,7 +543,7 @@ footer { background-color: var(--forest-green); color: white; text-align: center
 
 .reading-month {
     font-family: "Courier New", monospace;
-    font-size: 0.6rem;
+    font-size: 0.rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--sage-green);
@@ -684,4 +684,54 @@ footer { background-color: var(--forest-green); color: white; text-align: center
     background: #c0c0c0;
     border: 2px outset #fff;
     padding: 1px 6px;
+}
+
+/* --- folder tabs --- */
+.folder-tabs {
+    display: flex;
+    gap: 0;
+    margin-top: 20px;
+    position: relative;
+}
+
+.folder-tab {
+    font-family: "Averia Serif Libre", serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--bark-brown);
+    background: var(--ui-gray);
+    border: 1px solid var(--sage-green);
+    border-bottom: none;
+    padding: 5px 18px 6px;
+    cursor: pointer;
+    position: relative;
+    bottom: -1px;
+    transition: background 0.1s, color 0.1s;
+    user-select: none;
+    margin-right: 3px;
+}
+
+.folder-tab:hover {
+    background: #e4e0d6;
+}
+
+.folder-tab.active {
+    background: var(--bg-paper);
+    color: var(--forest-green);
+    border-color: var(--sage-green);
+    z-index: 2;
+}
+
+.folder-panel {
+    display: none;
+    border: 1px solid var(--sage-green);
+    padding: 18px 16px;
+    background: var(--bg-paper);
+    position: relative;
+    z-index: 1;
+}
+
+.folder-panel.active {
+    display: block;
 }
