@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projects — tofyu's archive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-card {
+            margin-bottom: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--sage-green);
+        }
+        .project-detail-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .project-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            gap: 12px;
+        }
+        .project-detail-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .project-detail-body {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+        .project-detail-images {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+        .project-img-placeholder {
+            width: 160px;
+            height: 100px;
+            background: color-mix(in srgb, var(--sage-green) 18%, transparent);
+            border: 1px dashed var(--sage-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            color: var(--sage-green);
+            opacity: 0.7;
+        }
+        .project-detail-desc {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+        .project-detail-extra {
+            font-size: 0.75rem;
+            line-height: 1.6;
+            color: var(--text-muted, #888);
+            margin: 6px 0 8px;
+            /* placeholder stuff for additional content later */
+        }
+        .project-detail-images img {
+            cursor: zoom-in;
+        }
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox.open {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            cursor: zoom-out;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div class="box21">
+        <div class="box-top"><div class="u01"></div></div>
+        <div class="box-center">
+            <div class="box-inner">
+
+                <div id="headerArea">
+                    <div id="header">
+                        <h1></h1>
+                    </div>
+                    <nav id="navbar">
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="#">blog</a></li>
+                            <li><a href="projects.html">projects</a></li>
+                            <li><a href="#">photodump</a></li>
+                            <li><a href="#">misc</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div id="flex">
+                    <main>
+                        <div class="box borderless">
+                            <div class="about-welcome-row">
+                                <h1 class="about-welcome">projects</h1>
+                            </div>
+                            <p style="font-size: 0.8rem; line-height: 1.6; margin: 6px 0 0;">
+                                a collection of projects and things i've built! this section is currently wip...
+                            </p>
+                        </div>
+
+                        <!-- folder tabs -->
+                        <div class="folder-tabs">
+                            <button class="folder-tab active" data-tab="engineering">software</button>
+                            <button class="folder-tab" data-tab="design">ux/ui design</button>
+                        </div>
+
+                        <!-- engineering panel -->
+                        <div class="folder-panel active" id="tab-engineering">
+
+                            <div class="project-detail-card">
+                                <div class="project-detail-header">
+                                    <h3 class="project-detail-title">NASA WebXR Application</h3>
+                                    <a href="https://psyche.ssl.berkeley.edu/get-involved/capstone-projects/capstone-projects-platinum-class/ar-webxr-for-public-engagement-uci-c/" class="project-link" target="_blank">info →</a>
+                                </div>
+                                <div class="project-tags" style="margin-bottom: 10px;">
+                                    <span class="tag">javascript</span>
+                                    <span class="tag">three.js</span>
+                                    <span class="tag">HTML/CSS</span>
+                                </div>
+                                <div class="project-detail-body">
+                                    <div class="project-detail-images">
+                                        <img src="assets/capstone-poster.png" alt="NASA Psyche Mission capstone poster" style="width: 180px; height: auto;">
+                                        <!-- <div class="project-img-placeholder">image</div> -->
+                                    </div>
+                                    <div>
+                                        <p class="project-detail-desc">
+                                            for my senior capstone projct, i designed and developed a mobile AR application that helps teach museum visitors about the NASA Psyche Mission in a fun and interactive way.
+                                            the application leverages the three.js javascript framework and the Variant Launch SDK.
+                                        </p>
+                                        <p class="project-detail-extra"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-card">
+                                <div class="project-detail-header">
+                                    <h3 class="project-detail-title">raspberry pi photobooth</h3>
+                                    <span class="project-link">in progress</span>
+                                </div>
+                                <div class="project-tags" style="margin-bottom: 10px;">
+                                    <span class="tag">php</span>
+                                    <span class="tag">javascript</span>
+                                    <span class="tag">PhotoboothProject</span>
+                                    <span class="tag">ImageMagick</span>
+                                </div>
+                                <div class="project-detail-body">
+                                    <div class="project-detail-images">
+                                        <img src="assets/photobooth1.gif" alt="raspberry pi photobooth" style="width: 180px; height: auto;">
+                                    </div>
+                                    <div>
+                                        <p class="project-detail-desc">
+                                            building a raspberry pi mini photobooth! uses a raspberry pi 4 & touchscreen display, prints photostrips on 
+                                            a canon selphy
+                                        </p>
+                                        <p class="project-detail-extra"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-card">
+                                <div class="project-detail-header">
+                                    <h3 class="project-detail-title">IoT screen time display</h3>
+                                    <div style="display: flex; gap: 10px;">
+                                        <a href="https://github.com/kcisten/iot-screentime-display" class="project-link" target="_blank">github →</a>
+                                        <a href="https://docs.google.com/presentation/d/1OYGTtYqxRAuQ00DMxK1E4J3fWBYQoD2hefkM4oW4rR0/edit?usp=sharing" class="project-link" target="_blank">slides →</a>
+                                    </div>
+                                </div>
+                                <div class="project-tags" style="margin-bottom: 10px;">
+                                    <span class="tag">python</span>
+                                    <span class="tag">c++</span>
+                                    <span class="tag">esp8266</span>
+                                    <span class="tag">iot</span>
+                                </div>
+                                <div class="project-detail-body">
+                                    <div class="project-detail-images">
+                                        <img src="assets/happy1.gif" alt="IoT screen time display demo" style="width: 180px; height: auto;">
+                                        <img src="assets/sadface-monitor.gif" alt="sad face monitor" style="width: 180px; height: auto;">
+                                    </div>
+                                    <div>
+                                        <p class="project-detail-desc">
+                                            designed a physical mini screen time tracker that reads ActivityWatch logs via an ESP8266 microcontroller
+                                            and sends automated Discord break reminders.
+                                        </p>
+                                        <p class="project-detail-extra">created for my informatics 148 class!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- design panel -->
+                        <div class="folder-panel" id="tab-design">
+
+                            <div class="project-detail-card">
+                                <div class="project-detail-header">
+                                    <h3 class="project-detail-title">sonar onboarding redesign</h3>
+                                    <a href="https://www.figma.com/proto/qpLmFhwiqNfVo4JBFCW56y/sonar-onboarding-prototype--Copy-?node-id=494-1570&starting-point-node-id=494%3A1570&t=ilT42V9U3wclV8oD-1" class="project-link" target="_blank">figma →</a>
+                                </div>
+                                <div class="project-tags" style="margin-bottom: 10px;">
+                                    <span class="tag">figma</span>
+                                    <span class="tag">ux research</span>
+                                </div>
+                                <div class="project-detail-body">
+                                    <div class="project-detail-images">
+                                        <div class="project-img-placeholder">image</div>
+                                        <div class="project-img-placeholder">image</div>
+                                    </div>
+                                    <div>
+                                        <p class="project-detail-desc">
+                                            redesigned the onboarding flow for a youth mental health application.
+                                        </p>
+                                        <p class="project-detail-extra">[ more content coming soon ]</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-card">
+                                <div class="project-detail-header">
+                                    <h3 class="project-detail-title">happy wallet</h3>
+                                    <a href="https://docs.google.com/presentation/d/1d29WCcbxOom4bYcOz34cbujqS3yEnA5DhdrbwHX9u8o/edit?usp=sharing" class="project-link" target="_blank">slides →</a>
+                                </div>
+                                <div class="project-tags" style="margin-bottom: 10px;">
+                                    <span class="tag">product design</span>
+                                    <span class="tag">figma</span>
+                                    <span class="tag">ux research</span>
+                                </div>
+                                <div class="project-detail-body">
+                                    <div class="project-detail-images">
+                                        <img src="assets/happy-wallet.jpg" alt="happy wallet app" style="width: 180px; height: auto;">
+                                        <div class="project-img-placeholder">image</div>
+                                    </div>
+                                    <div>
+                                        <p class="project-detail-desc">
+                                            designed a hi-fi prototype for a gamified financial literacy education mobile app.
+                                        </p>
+                                        <p class="project-detail-extra">won 2nd at design@uci's 2024 fall project teams competition!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <footer id="footer">
+                    ♡ 2026  • site inspired by neocities!
+                </footer>
+
+            </div>
+        </div>
+        <div class="box-bottom"><div class="s01"></div></div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.folder-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.folder-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.folder-panel').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    const header = document.getElementById('header');
+    header.addEventListener('mousemove', (e) => {
+        const rect = header.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        const px = 50 + (x - 0.5) * -8;
+        const py = 50 + (y - 0.5) * -8;
+        header.style.backgroundPosition = `${px}% ${py}%`;
+    });
+    header.addEventListener('mouseleave', () => {
+        header.style.backgroundPosition = 'center';
+    });
+
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    const lightboxImg = document.createElement('img');
+    lightbox.appendChild(lightboxImg);
+    document.body.appendChild(lightbox);
+
+    document.querySelectorAll('.project-detail-images img').forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('open');
+        });
+    });
+
+    lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+</script>
+</body>
+</html>
