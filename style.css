@@ -735,3 +735,109 @@ footer { background-color: var(--forest-green); color: white; text-align: center
 .folder-panel.active {
     display: block;
 }
+
+/* mobile */
+@media (max-width: 640px) {
+    body {
+        padding: 8px;
+    }
+
+    .box-inner {
+        margin: 0 10px;
+    }
+    .u01, .s01 {
+        margin: 0 10px;
+    }
+
+    #header {
+        height: 80px;
+    }
+    #header h1 {
+        font-size: 22px;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+        gap: 0;
+        justify-content: center;
+    }
+    #navbar li a {
+        padding: 5px 8px;
+        display: inline-block;
+    }
+
+    #flex {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+        box-sizing: border-box;
+        border-left: none;
+        border-top: 1px solid var(--ui-gray);
+        padding: 12px 16px;
+    }
+    main {
+        padding: 14px 12px;
+    }
+
+    .about-body {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .about-stats {
+        width: 100%;
+        border-left: none;
+        border-top: 1px dashed var(--sage-green);
+        padding-left: 0;
+        padding-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+    .about-stats p {
+        margin: 0;
+    }
+
+    .exp-row {
+        flex-direction: column;
+        gap: 4px;
+        padding: 10px 0 10px 10px;
+    }
+    .exp-meta-col {
+        width: 100%;
+        flex-direction: row;
+        gap: 8px;
+        padding-right: 0;
+    }
+
+    .projects-grid,
+    .archive-grid {
+        columns: 1;
+    }
+
+    .project-detail-body {
+        flex-direction: column;
+    }
+    .project-detail-images {
+        flex-shrink: unset;
+    }
+    .project-detail-images img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .folder-tabs {
+        flex-wrap: wrap;
+    }
+    .folder-tab {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    #rightSidebar img[alt="nara guitar"] {
+        position: static;
+        width: 60%;
+        display: block;
+        margin: 16px auto 0;
+    }
+}
